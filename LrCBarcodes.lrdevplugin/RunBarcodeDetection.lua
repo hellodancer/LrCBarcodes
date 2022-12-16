@@ -45,7 +45,7 @@ function BarcodeDetection.detectBarcodes()
         local keyTwo = "<data><!%[CDATA%["
         local keyTwoEnd = "%]%]></data>"
         catalog:withPrivateWriteAccessDo( function( )
-            local photos = catalog:getAllPhotos()
+            local photos = catalog:getActiveSources()
             local max = TableLength(photos)
             -- Each Photo
             for _, photo in pairs(photos) do
